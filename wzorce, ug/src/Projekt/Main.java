@@ -1,28 +1,20 @@
 package Projekt;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Observer;
-
 import Projekt.Kreacyjne.Perfume;
 import Projekt.Kreacyjne.PerfumeShop;
 import Projekt.Kreacyjne.WorkingWith;
-import Projekt.Czynnosciowe.Client;
 import Projekt.Czynnosciowe.Observable;
-import Projekt.Kreacyjne.CompanySingelton;
 import Projekt.Strukturalne.*;
 
 public class Main {
 
 	public static void main(String[] args) throws CloneNotSupportedException {
-		// TODO Auto-generated method stub
-
+		
 		Observable obvervable = new Perfume("Gucci", 600);
 		obvervable.notifyObservers(obvervable.getName());
-		
-		PerfumeShop gdanskShop= new PerfumeShop(obvervable);
+
+		PerfumeShop gdanskShop = new PerfumeShop(obvervable);
 		obvervable.addObserver(gdanskShop);
-		
 		PerfumeShop sopotShop = (PerfumeShop) gdanskShop.clone();
 
 		Perfume chanel = new Perfume("Chanel", 500);
@@ -46,15 +38,14 @@ public class Main {
 		perfumWorking.add(avon);
 		perfumWorking.add(NinaRichie);
 		perfumWorking.add(DG);
-	
 
 		ShopComposite douglasSopot = new ShopComposite("(Sopot)", "sklep internetowy\n");
 		ShopComposite douglasGdansk = new ShopComposite("(Gdansk)", "sklep stacjonarny\n");
-		
+
 		for (Perfume i : sopotShop.getPerfume()) {
 			douglasSopot.dodaj(new ShopLeaf(i.getName(), String.valueOf(i.getPrice())));
 		}
-		
+
 		for (Perfume i : gdanskShop.getPerfume()) {
 			douglasGdansk.dodaj(new ShopLeaf(i.getName(), String.valueOf(i.getPrice())));
 		}

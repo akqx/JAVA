@@ -18,7 +18,7 @@ public class CompanySingelton {
 	}
 
 	public String[] getWorkingWith() {
-		String[] company = { "Chanel", "CK", "D&G", "Avon", "Adidas" , "NinaRichie"};
+		String[] company = { "Chanel", "CK", "D&G", "Avon", "Adidas", "NinaRichie" };
 		return company;
 	}
 }

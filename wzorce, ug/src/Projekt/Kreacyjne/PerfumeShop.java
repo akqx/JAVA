@@ -1,22 +1,17 @@
 package Projekt.Kreacyjne;
 
-import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-
 import Projekt.Czynnosciowe.Observable;
 import Projekt.Czynnosciowe.Observer;
-import Projekt.Czynnosciowe.Observer;
+
 public class PerfumeShop implements Cloneable, Observer {
 
 	private String shopName;
-	List<Perfume> perfume = new ArrayList<>();
 	private Observable observable = null;
+	List<Perfume> perfume = new ArrayList<>();
+	
 	public PerfumeShop(Observable obvervable) {
-		// TODO Auto-generated constructor stub
 		this.observable = observable;
 	}
 
@@ -45,7 +40,6 @@ public class PerfumeShop implements Cloneable, Observer {
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 		}
-
 		return clone;
 	}
 
@@ -56,7 +50,7 @@ public class PerfumeShop implements Cloneable, Observer {
 
 	@Override
 	public void update(String name) {
-		System.out.println("***WYPRZEDA¯!*** Od dziœ przez ca³y tydzieñ "+ name +" taniej o 30%");
+		System.out.println("***WYPRZEDA¯!*** Od dziœ przez ca³y tydzieñ " + name + " taniej o 30%");
 	}
 
 }
