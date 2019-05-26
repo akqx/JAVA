@@ -13,7 +13,6 @@ public class CompanySingelton {
 		if (instance == null) {
 			instance = new CompanySingelton();
 		}
-
 		return instance;
 	}
 
