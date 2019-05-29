@@ -47,15 +47,15 @@ public class Extrema {
 			// wyznaczone warunki:
 			// https://inf.ug.edu.pl/~lmielewczyk/teaching/ns/graf-geo-alg/lab/lab1.php
 
-			if (
-					(p.getY() > previous.getY() && p.getY() > next.getY() &&                                    PointsHelper.isClockwise(previous, p, next)) ||
-					(p.getY() > previous.getY() && p.getY() == next.getY() && p.getY() > nextnext.getY() &&     PointsHelper.isClockwise(previous, p, nextnext))
-			)maxima.add(p);
+			if ((p.getY() > previous.getY() && p.getY() > next.getY() && PointsHelper.isClockwise(previous, p, next))
+					|| (p.getY() > previous.getY() && p.getY() == next.getY() && p.getY() > nextnext.getY()
+							&& PointsHelper.isClockwise(previous, p, nextnext)))
+				maxima.add(p);
 
-			if (
-					(p.getY() < previous.getY() && p.getY() < next.getY() &&                                    PointsHelper.isClockwise(previous, p, next)) ||
-					(p.getY() < previous.getY() && p.getY() == next.getY() && p.getY() < nextnext.getY() &&     PointsHelper.isClockwise(previous, p, nextnext))
-			)minima.add(p);
+			if ((p.getY() < previous.getY() && p.getY() < next.getY() && PointsHelper.isClockwise(previous, p, next))
+					|| (p.getY() < previous.getY() && p.getY() == next.getY() && p.getY() < nextnext.getY()
+							&& PointsHelper.isClockwise(previous, p, nextnext)))
+				minima.add(p);
 
 			previous = p;
 		}
